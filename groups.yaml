@@ -18,6 +18,7 @@
     icon: mdi:play-circle-outline
     entities:
       - media_player.volumio
+      - media_player.camera
       - media_player.sala
       - media_player.cucina
 

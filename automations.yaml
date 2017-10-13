@@ -1,78 +1,20 @@
-####################################################
-#                                                  #
-#              System Automations                  #
-#                                                  #
-####################################################
-
-####################################################
-#                  Lights                          #
-####################################################
 - id: terrazzo_on
   alias: Luce Terrazzo ON
   trigger:
-    - platform: sun
-      event: sunset
-      offset: '+00:30:00'
+  - event: sunset
+    offset: +00:15:00
+    platform: sun
   action:
+  - entity_id: switch.terrazzo
     service: homeassistant.turn_on
-    entity_id: switch.terrazzo 
-
 - id: terrazzo_off
   alias: Luce Terrazzo OFF
   trigger:
-    - platform: time
-      at: '00:30:00'
+  - platform: time
+    at: 00:30:00
   action:
     service: homeassistant.turn_off
-    entity_id: switch.terrazzo 
-
-####################################################
-#                  TTS Cache                       #
-####################################################
-
-#- id: Lights_Self_Shut
-#  alias: Flush TTS Cache
-#  hide_entity: True
-#  trigger:
-#    platform: time
-#    after: '2:35:00'
-#  action:
-#   service: tts.clear_cache
-
-####################################################
-#                  Log Levels                      #
-####################################################
-
-# - id: Log_levels
-#   alias: Log Level
-#   trigger:
-#     platform: state
-#     entity_id: input_select.log_level
-#   action:
-#     service: logger.set_level
-
-####################################################
-#                  Owntracks                       #
-####################################################
-
-#- id: Owntracks_Refresh
-#  alias: Owntracks Refresh
-#  trigger:
-#    platform: time
-#    minutes: '/5'
-#    seconds: 0
-#  action:
-#    service: script.refresh_devices
-
-####################################################
-#                                                  #
-#                Notifications                     #
-#                                                  #
-####################################################
-
-####################################################
-#                  Update Available                #
-####################################################
+    entity_id: switch.terrazzo
 - id: Update_Notify
   alias: Update Available Notifications
   trigger:
@@ -81,86 +23,18 @@
   action:
     service: notify.pcube_bot
     data:
-      message: "Update for Home Assistant is available."
-
-
-####################################################
-#                  Bad Logins                      #
-####################################################
-
+      message: Update for Home Assistant is available.
 - id: bad_logins
   alias: Login Failure
-  hide_entity: True
+  hide_entity: true
   trigger:
     platform: template
-    value_template: "{{ states('persistent_notification.httplogin') != 'authentication' }}"
+    value_template: '{{ states(''persistent_notification.httplogin'') != ''authentication''
+      }}'
   action:
-   service: notify.pcube_bot
-   data:
-     message: 'Bad Login.. There was a Hack attempt! Go Check the GUI for details.'
-
-####################################################
-#                  Battery                         #
-#                Notifications                     #
-####################################################
-
-####################################################
-#                  pier Battery                    #
-####################################################
-
-# - id: Pier_Battery
-#   alias: Pier Battery Low - Notification
-#   trigger:
-#      platform: time
-#      # You can also match on interval. This will match every 45 minutes
-#      minutes: '/45'
-#      seconds: 00
-# 
-#   condition:
-#      condition: or
-#      conditions:
-#        - condition: template
-#          value_template: "{{ states.device_tracker.ipier.attributes.battery < 30 }}" 
-# 
-#   action:
-#     - service: notify.pcube_bot
-#       data:
-#         message: "Pier's Telephone is on low Battery at {{ states('sensor.time__date') }}"
-#     - service: notify.pcube_bot
-#       data:
-#         message: "Pier's Telephone Battery Level is {{ states('sensor.batteria_telefono_pier') }}%"
-
-
-####################################################
-#                  Costanza Battery                #
-####################################################
-
-# - id: Costanza_Battery
-#   alias: Costanza Battery Low - Notification
-#   trigger:
-#      platform: time
-#      # You can also match on interval. This will match every 45 minutes
-#      minutes: '/45'
-#      seconds: 00
-# 
-#   condition:
-#      condition: or
-#      conditions:
-#        - condition: template
-#          value_template: "{{ states.device_tracker.costanza_icostanza.attributes.battery < 30 }}"
-# 
-#   action:
-#     - service: notify.pcube_bot
-#       data:
-#         message: "Costanza's Telephone is on low Battery at {{ states('sensor.time__date') }}"
-#     - service: notify.pcube_bot
-#       data:
-#         message: "Costanza's Telephone Battery Level is {{ states('sensor.batteria_telefono_costanza') }}%"
-
-####################################################
-#                  Hass Start                      #
-####################################################
-
+    service: notify.pcube_bot
+    data:
+      message: Bad Login.. There was a Hack attempt! Go Check the GUI for details.
 - id: hass_start
   alias: Home Assistant Start - Notify
   trigger:
@@ -169,12 +43,7 @@
   action:
     service: notify.pcube_bot
     data:
-      message: "Home Assistant Start at {{ states('sensor.time__date') }}"
-
-####################################################
-#                  Hass Stop                       #
-####################################################
-
+      message: Home Assistant Start at {{ states('sensor.time__date') }}
 - id: hass_stop
   alias: Home Assistant Stop - Notify
   trigger:
@@ -183,114 +52,49 @@
   action:
     service: notify.pcube_bot
     data:
-      message: "Home Assistant Stop at {{ states('sensor.time__date') }}"
-
-####################################################
-#                  Zone                            #
-#              Notifications                       #
-####################################################
-
-####################################################
-#                   Cotanza  Home                  #
-####################################################
-
+      message: Home Assistant Stop at {{ states('sensor.time__date') }}
 - id: cotanza_home
   alias: Costanza at Home - Notification
   trigger:
-     platform: state
-     from: 'not_home'
-     to: 'home'
-     entity_id: device_tracker.costanza_icostanza
+    platform: state
+    from: not_home
+    to: home
+    entity_id: device_tracker.costanza_icostanza
   action:
-   service: notify.pcube_bot
-   data:
-     message: "Costanza is at Home at {{ states('sensor.time__date') }}"
-
-####################################################
-#                   Costanza Out Home              #
-####################################################
-
+    service: notify.pcube_bot
+    data:
+      message: Costanza is at Home at {{ states('sensor.time__date') }}
 - id: costanza_out_home
   alias: Costanza Outside Home - Notification
   trigger:
-     platform: state
-     from: 'home'
-     to: 'not_home'
-     entity_id: device_tracker.costanza_icostanza
+    platform: state
+    from: home
+    to: not_home
+    entity_id: device_tracker.costanza_icostanza
   action:
-   service: notify.pcube_bot
-   data:
-     message: "Costanza is going out at {{ states('sensor.time__date') }}"
-
-
-####################################################
-#                  Pier Home                       #
-####################################################
-
+    service: notify.pcube_bot
+    data:
+      message: Costanza is going out at {{ states('sensor.time__date') }}
 - id: Pier_home
   alias: Pier at Home - Notification
   trigger:
-     platform: state
-     entity_id: device_tracker.pier_ipier
-     from: 'not_home'
-     to: 'home'
+    platform: state
+    entity_id: device_tracker.pier_ipier
+    from: not_home
+    to: home
   action:
-   service: notify.pcube_bot
-   data:
-     message: "Pier is at Home at {{ states('sensor.time__date') }}"
-
-####################################################
-#                  Pier Out Home                   #
-####################################################
-
+    service: notify.pcube_bot
+    data:
+      message: Pier is at Home at {{ states('sensor.time__date') }}
 - id: Pier_out_home
   alias: Pier is going out - Notification
   trigger:
-     platform: state
-     entity_id: device_tracker.pier_ipier
-     from: 'home'
-     to: 'not_home'
+    platform: state
+    entity_id: device_tracker.pier_ipier
+    from: home
+    to: not_home
   action:
-   service: notify.pcube_bot
-   data:
-     message: "Pier is going out from {{ trigger.to_state.state }} at  {{ states('sensor.time__date') }}"
-
-####################################################
-#                Notify Sunrise                    #
-####################################################
-
-# - id: Sunrise
-#   alias: Notify on sunrise
-#   trigger:
-#     platform: sun
-#     event: sunrise
-#     offset: '+00:00:00'
-#   action:
-#     # Actions are scripts so can also be a list of actions
-#     - service: notify.pcube_bot
-#       data:
-#         message: "Beautiful sunrise!"
-#     - service: notify.pcube_bot
-#       data:
-#         message: "The sun is up. Wake Up! {{ states('sensor.time__date') }}"
-
-####################################################
-#                Notify Sunset                     #
-####################################################
-
-# - id: Sunset
-#   alias: Notify on sunset
-#   trigger:
-#     platform: sun
-#     event: sunset
-#     offset: '+00:00:00'
-#   action:
-#     # Actions are scripts so can also be a list of actions
-#     - service: notify.pcube_bot
-#       data:
-#         message: "Beautiful sunset!"
-#     - service: notify.pcube_bot
-#       data:
-#         message: "Oh wow you really missed something great. {{ states('sensor.time__date') }}"
-
-
+    service: notify.pcube_bot
+    data:
+      message: Pier is going out from {{ trigger.to_state.state }} at  {{ states('sensor.time__date')
+        }}
