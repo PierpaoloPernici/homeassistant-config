@@ -51,28 +51,28 @@
 
 - platform: mqtt    
   name: "LUCE Potenza"
-  state_topic: "tele/POW/ENERGY"
+  state_topic: "tele/POW/SENSOR"
   qos: 0
   unit_of_measurement: "W"
-  value_template: "{{ value_json.Power }}"
+  value_template: "{{ value_json.ENERGY.Power }}"
 
 - platform: mqtt    
   name: "LUCE Tensione"
-  state_topic: "tele/POW/ENERGY"
+  state_topic: "tele/POW/SENSOR"
   qos: 0
   unit_of_measurement: "V"
-  value_template: "{{ value_json.Voltage }}"
+  value_template: "{{ value_json.ENERGY.Voltage }}"
 
 - platform: mqtt    
   name: "LUCE Consumo di oggi"
-  state_topic: "tele/POW/ENERGY"
+  state_topic: "tele/POW/SENSOR"
   qos: 0
   unit_of_measurement: "kWh"
-  value_template: "{{ value_json.Today }}"
+  value_template: "{{ value_json.ENERGY.Today }}"
 
 - platform: mqtt    
   name: "LUCE Consumo di ieri"
-  state_topic: "tele/POW/ENERGY"
+  state_topic: "tele/POW/SENSOR"
   qos: 0
   unit_of_measurement: "kWh"
-  value_template: "{{ value_json.Yesterday }}"
+  value_template: "{{ value_json.ENERGY.Yesterday }}"

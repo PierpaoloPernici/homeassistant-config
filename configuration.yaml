@@ -132,6 +132,10 @@ netatmo:
   username: !secret netatmo_username
   password: !secret netatmo_password
 
+nest:
+  client_id: !secret nest_client_id
+  client_secret: !secret nest_client_secret
+
 tts:
   - platform: voicerss
     api_key: !secret voicerss_api_key
