@@ -145,6 +145,7 @@ tts:
 
 mqtt: !include mqtt.yaml
 sensor: !include sensor.yaml    
+hue: !include hue.yaml
 switch: !include switch.yaml
 camera: !include camera.yaml
 notify: !include notify.yaml
