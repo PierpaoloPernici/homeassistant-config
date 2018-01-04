@@ -44,6 +44,7 @@
     name: 'Luci'
     entities:
       - switch.terrazzo
+      - light.sala_da_pranzo
 
   thermostats:
     name: 'Termostato'
