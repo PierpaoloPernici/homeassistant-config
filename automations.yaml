@@ -1,5 +1,6 @@
 - id: terrazzo_on
   alias: Luce Terrazzo ON
+  initial_state: False
   trigger:
   - event: sunset
     offset: +00:15:00
@@ -9,6 +10,7 @@
     service: homeassistant.turn_on
 - id: terrazzo_off
   alias: Luce Terrazzo OFF
+  initial_state: False
   trigger:
   - platform: time
     at: 00:30:00
@@ -55,6 +57,7 @@
       message: Home Assistant Stop at {{ states('sensor.time__date') }}
 - id: cotanza_home
   alias: Costanza at Home - Notification
+  initial_state: False
   trigger:
     platform: state
     from: not_home
@@ -66,6 +69,7 @@
       message: Costanza is at Home at {{ states('sensor.time__date') }}
 - id: costanza_out_home
   alias: Costanza Outside Home - Notification
+  initial_state: False
   trigger:
     platform: state
     from: home
@@ -77,6 +81,7 @@
       message: Costanza is going out at {{ states('sensor.time__date') }}
 - id: Pier_home
   alias: Pier at Home - Notification
+  initial_state: False
   trigger:
     platform: state
     entity_id: device_tracker.pier_ipier
@@ -88,6 +93,7 @@
       message: Pier is at Home at {{ states('sensor.time__date') }}
 - id: Pier_out_home
   alias: Pier is going out - Notification
+  initial_state: False
   trigger:
     platform: state
     entity_id: device_tracker.pier_ipier

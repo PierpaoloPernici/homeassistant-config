@@ -10,6 +10,10 @@ homeassistant:
     group.all_switches:
       friendly_name: 'Luce'
       emulated_hue: True
+    group.all_lights:
+      emulated_hue: False
+      homebridge_hidden: true
+      hidden: false
     group.all_automations:
       friendly_name: 'Automazione'
       emulated_hue: False
@@ -24,6 +28,8 @@ homeassistant:
       homebridge_hidden: true
 
   customize_glob:
+    "light*":
+      homebridge_hidden: true
     "device_tracker*":
       homebridge_hidden: true
     "sensor.iphone_di_costanza*": 
@@ -131,10 +137,6 @@ netatmo:
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
-
-nest:
-  client_id: !secret nest_client_id
-  client_secret: !secret nest_client_secret
 
 tts:
   - platform: voicerss
