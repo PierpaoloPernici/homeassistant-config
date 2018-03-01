@@ -17,10 +17,9 @@
     view: yes
     icon: mdi:play-circle-outline
     entities:
+      - media_player.samsung_tv_remote
       - media_player.volumio
-      - media_player.camera
       - media_player.sala
-      - media_player.cucina
 
   awesome_people:
     name: Awesome People
@@ -45,6 +44,7 @@
     entities:
       - switch.terrazzo
       - light.sala_da_pranzo
+      - light.tv
 
   thermostats:
     name: 'Termostato'

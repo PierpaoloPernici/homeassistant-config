@@ -1,3 +1,7 @@
 - platform: volumio
   host: volumio.local
   port: 3000
+- platform: samsungtv
+  host: samsung.local
+  port: 8001
+  mac: 84:c0:ef:07:f9:ba
