@@ -20,5 +20,15 @@ refresh_devices:
       topic: owntracks/pier/ipier/cmd
     service: mqtt.publish
   alias: Refresh OWNTRACKS
-    
-
+tv_select_source:
+  sequence:
+  - data:
+      packet:
+      - JgBGAJGTETcSNRQ0FBASERMREhESEBM1EzcSNxESEhESEBQPFA8TEBM1EzUQExESERIREhISETcREhMREjQUNBU0EjYTNBQADQUAAA==
+    service: switch.broadlink_send_packet_192_168_1_250
+  - delay: 00:00:08
+  - data:
+      packet:
+      - JgBGAJOSEjcUMxUzFQ4UDhEREREUDxMzETcSNxMQEw4UDhEREhAUMxUOERERNxQPEzMRNxI3ExATMxUzEhEUMxIRExATDhQADQUAAA==
+    service: switch.broadlink_send_packet_192_168_1_250
+  alias: TV source
