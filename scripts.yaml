@@ -20,3 +20,5 @@ refresh_devices:
       topic: owntracks/pier/ipier/cmd
     service: mqtt.publish
   alias: Refresh OWNTRACKS
+    
+

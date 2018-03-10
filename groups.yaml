@@ -7,6 +7,7 @@
       - sensor.meteo_symbol
       - sensor.meteo_temperature
       - group.switch
+      - group.tvcamera
       - group.thermostats
       - group.consumi
       - group.weather
@@ -17,8 +18,9 @@
     view: yes
     icon: mdi:play-circle-outline
     entities:
-      - media_player.samsung_tv_remote
       - media_player.volumio
+      - media_player.samsung_tv_remote
+      - media_player.apple_tv
       - media_player.sala
 
   awesome_people:
@@ -45,6 +47,13 @@
       - switch.terrazzo
       - light.sala_da_pranzo
       - light.tv
+
+  tvcamera:
+    name: 'Telecomando Camera'
+    entities:
+      - switch.tv_power
+      - switch.tv_enigma2
+      - switch.tv_appletv
 
   thermostats:
     name: 'Termostato'

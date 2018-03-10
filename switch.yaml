@@ -10,3 +10,19 @@
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
+- platform: broadlink
+  host: 192.168.1.250
+  mac: '34:EA:34:58:96:06'
+  timeout: 15
+  friendly_name: "Telecomando Camera" 
+  switches:
+   tv_camerapower:
+     friendly_name: "TV Power"
+     command_on: 'JgBGAJGTETcSNRQ0FBASERMREhESEBM1EzcSNxESEhESEBQPFA8TEBM1EzUQExESERIREhISETcREhMREjQUNBU0EjYTNBQADQUAAA=='
+     command_off: 'JgBGAJaPEjcSNhE3FA8TDhASEREUDxMzETcSNxMQEw4UDhEREhAUDxMOEREROBMzFQ4QEhE3EzYTMxU2FA8TDhE2EjcUDxMADQUAAA=='
+   tv_camerahdmi1:
+     friendly_name: "TV Enigma2"
+     command_on: 'JgBGAJOSEjcUMxUzFQ4UDhEREREUDxMzETcSNxMQEw4UDhEREhAUMxUOERERNxQPEzMRNxI3ExATMxUzEhEUMxIRExATDhQADQUAAA=='
+   tv_camerahdmi2:
+     friendly_name: "TV AppleTV"
+     command_on: 'JgBGAJOUETkRORA6ERQQFRAVERQRFBA6ETkROhAVDxYQFQ8WEBUQFQ87EDoRORA6DzsQFRA6DzsPFhAVDxYQFRAVEDoQFRAADQUAAA=='

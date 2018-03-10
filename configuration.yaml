@@ -20,15 +20,11 @@ homeassistant:
       hidden: false
     sensor.time__date:
       homebridge_hidden: true
-    media_player.volumio:
-      homebridge_hidden: true
-    media_player.sala:
-      homebridge_hidden: true
-    media_player.cucina:
-      homebridge_hidden: true
 
   customize_glob:
     "light*":
+      homebridge_hidden: true
+    "media_player*":
       homebridge_hidden: true
     "device_tracker*":
       homebridge_hidden: true
@@ -60,6 +56,12 @@ updater:
 
 # Discover some devices automatically
 # discovery:
+
+discovery:
+  ignore:
+   - samsung_tv
+#   - roku
+#   - google_cast
 
 conversation:
 
