@@ -5,3 +5,19 @@
   host: 192.168.1.224
   port: 8001
   mac: 84:c0:ef:07:f9:ba
+- platform: enigma
+  host: 192.168.1.222
+  port: 80
+  name: Duo2
+  icon: mdi:satellite-variant
+  timeout: 20
+  username: root
+  password: !secret enigma_password
+- platform: enigma
+  host: 192.168.1.221
+  port: 80
+  name: zGemma
+  icon: mdi:satellite-variant
+  timeout: 20
+  username: root
+  password: !secret enigma_password
