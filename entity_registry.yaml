@@ -1,0 +1,76 @@
+light.destra_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:46:37:75-0b
+light.destra_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:47:c6:62-0b
+light.sinistra_2:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:ea:e6:6d-0b
+light.terrazzo_sn:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:46:2d:8d-0b
+light.terrazzo_dx:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:46:34:36-0b
+light.sinistra_1:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:44:9b:c5-0b
+light.led_strip:
+  name:
+  platform: hue
+  unique_id: 00:17:88:01:03:a0:01:e6-0b
+sensor.iphone_di_costanza_battery_state:
+  name:
+  platform: ios
+  unique_id: state_iphone_di_costanza
+sensor.iphone_di_costanza_battery_level:
+  name:
+  platform: ios
+  unique_id: level_iphone_di_costanza
+sensor.ipier_battery_level:
+  name:
+  platform: ios
+  unique_id: level_ipier
+sensor.ipier_battery_state:
+  name:
+  platform: ios
+  unique_id: state_ipier
+sensor.ipad_di_costanza_battery_state:
+  name:
+  platform: ios
+  unique_id: state_ipad_di_costanza
+sensor.ipad_di_costanza_battery_level:
+  name:
+  platform: ios
+  unique_id: level_ipad_di_costanza
+media_player.apple_tv:
+  name:
+  platform: apple_tv
+  unique_id: 3e96d8732051b54fef2ae0c914fb09658c3defa513f6bbd274e73ccd57f59fc4
+remote.apple_tv:
+  name:
+  platform: apple_tv
+  unique_id: 3e96d8732051b54fef2ae0c914fb09658c3defa513f6bbd274e73ccd57f59fc4
+media_player.sala:
+  name: Chromecast SALA
+  platform: cast
+  unique_id: 3cd108b1-861d-f7d2-62a5-02ede7d2059f
+media_player.plex_web_safari:
+  name:
+  platform: plex
+  unique_id: wsuixnjd8md
+media_player.aftt:
+  name:
+  platform: plex
+  unique_id: f2c70f54824aba90-com-plexapp-android
+media_player.pierbook:
+  name:
+  platform: plex
+  unique_id: n2esoxizz9lnxj1hv7jeb3xr
