@@ -4,6 +4,8 @@
     view: yes
     icon: mdi:home 
     entities:
+      - device_tracker.pier_ipier
+      - device_tracker.costanza_icostanza
       - sensor.meteo_symbol
       - sensor.meteo_temperature
       - group.switch
@@ -22,16 +24,6 @@
       - media_player.samsung_tv_remote
       - media_player.apple_tv
       - media_player.sala
-
-  awesome_people:
-    name: Awesome People
-    view: yes
-    icon: mdi:account-multiple
-    entities:
-      - device_tracker.pier_ipier
-      - camera.pier
-      - device_tracker.costanza_icostanza
-      - camera.costanza
 
   misc:
     name: Utility

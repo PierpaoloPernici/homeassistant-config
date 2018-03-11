@@ -1,10 +1,10 @@
 #- platform: owntracks
 - platform: nmap_tracker
-  track_new_devices: false
+  track_new_devices: true
   interval_seconds: 30
   consider_home: 600
   home_interval: 10
-  scan_options: " --privileged -sP "
+#  scan_options: " --privileged -sP "
   hosts:
     - 192.168.1.16
     - 192.168.1.113
