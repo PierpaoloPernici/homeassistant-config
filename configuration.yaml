@@ -141,11 +141,13 @@ netatmo:
   password: !secret netatmo_password
 
 tts:
-  - platform: voicerss
-    api_key: !secret voicerss_api_key
-    language: 'it-it'
-    codec: mp3
-    format: 8khz_8bit_mono
+#  - platform: voicerss
+#    api_key: !secret voicerss_api_key
+#    language: 'it-it'
+#    codec: mp3
+#    format: 8khz_8bit_mono
+  - platform: google
+    language: 'it'
 
 mqtt: !include mqtt.yaml
 sensor: !include sensor.yaml    
