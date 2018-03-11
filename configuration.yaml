@@ -6,20 +6,7 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Rome
 
-  customize:
-    group.all_switches:
-      friendly_name: 'Luce'
-      emulated_hue: True
-    group.all_lights:
-      emulated_hue: False
-      homebridge_hidden: true
-      hidden: false
-    group.all_automations:
-      friendly_name: 'Automazione'
-      emulated_hue: False
-      hidden: false
-    sensor.time__date:
-      homebridge_hidden: true
+  customize: !include customize.yaml
 
   customize_glob:
     "light*":

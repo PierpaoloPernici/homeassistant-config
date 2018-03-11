@@ -1,2 +1,17 @@
+group.all_switches:
+  friendly_name: 'Luce'
+  emulated_hue: True
+group.all_lights:
+  emulated_hue: False
+  homebridge_hidden: true
+  hidden: false
+group.all_automations:
+  friendly_name: 'Automazione'
+  emulated_hue: False
+  hidden: false
+sensor.time__date:
+  homebridge_hidden: true
 sensor.hass_uptime: {}
 device_tracker.pier_ipier: {}
+script.tv_select_source:
+  icon: mdi:television-box
