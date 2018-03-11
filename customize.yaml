@@ -1,17 +1,25 @@
 group.all_switches:
-  friendly_name: 'Luce'
-  emulated_hue: True
+  friendly_name: Luce
+  emulated_hue: true
 group.all_lights:
-  emulated_hue: False
+  emulated_hue: false
   homebridge_hidden: true
   hidden: false
 group.all_automations:
-  friendly_name: 'Automazione'
-  emulated_hue: False
+  friendly_name: Automazione
+  emulated_hue: false
   hidden: false
 sensor.time__date:
   homebridge_hidden: true
 sensor.hass_uptime: {}
 device_tracker.pier_ipier: {}
 script.tv_select_source:
+  friendly_name: Accendi TV
+  homebridge_name: Accendi TV
   icon: mdi:television-box
+light.tv:
+  friendly_name: TV LED
+light.sala_da_pranzo:
+  icon: mdi:ceiling-light
+group.consumi:
+  icon: mdi:currency-eur
