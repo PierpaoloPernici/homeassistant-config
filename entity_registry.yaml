@@ -74,3 +74,11 @@ media_player.pierbook:
   name:
   platform: plex
   unique_id: n2esoxizz9lnxj1hv7jeb3xr
+media_player.plex_web_chrome:
+  name:
+  platform: plex
+  unique_id: 4auu4o7flui2hrcdd6ra3esv
+media_player.tv_ue55mu6470:
+  name:
+  platform: plex
+  unique_id: ve6io90tmehzolxr1pgdm5ba
