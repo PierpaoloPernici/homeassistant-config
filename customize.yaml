@@ -14,8 +14,8 @@ sensor.time__date:
 sensor.hass_uptime: {}
 device_tracker.pier_ipier: {}
 script.tv_select_source:
-  friendly_name: Accendi TV
-  homebridge_name: Accendi TV
+  friendly_name: Watch TV Camera
+  homebridge_name: Watch TV Camera
   icon: mdi:television-box
 light.tv:
   friendly_name: TV LED
@@ -23,3 +23,5 @@ light.sala_da_pranzo:
   icon: mdi:ceiling-light
 group.consumi:
   icon: mdi:currency-eur
+switch.tv_power:
+  friendly_name: TV Camera

@@ -1,5 +1,5 @@
 - id: terrazzo_on
-  alias: Luce Terrazzo ON
+  alias: Auto Terrazzo ON
   initial_state: False
   trigger:
   - event: sunset
@@ -9,7 +9,7 @@
   - entity_id: switch.terrazzo
     service: homeassistant.turn_on
 - id: terrazzo_off
-  alias: Luce Terrazzo OFF
+  alias: Auto Terrazzo OFF
   initial_state: False
   trigger:
   - platform: time
