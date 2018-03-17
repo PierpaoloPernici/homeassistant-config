@@ -139,7 +139,6 @@ tts:
 #    format: 8khz_8bit_mono
   - platform: google
     language: 'it'
-
 mqtt: !include mqtt.yaml
 sensor: !include sensor.yaml    
 hue: !include hue.yaml
@@ -152,3 +151,16 @@ zone: !include zones.yaml
 automation: !include automations.yaml
 media_player: !include media_player.yaml
 device_tracker: !include device_tracker.yaml
+
+input_number:
+  internet_traffic_delta_in:
+    name: "Traffic IN Delta"
+    initial: 0
+    min: 0
+    max: 1000000000000
+
+  internet_traffic_delta_out:
+    name: "Traffic OUT Delta"
+    initial: 0
+    min: 0
+    max: 1000000000000

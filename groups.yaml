@@ -12,6 +12,7 @@
       - group.tvcamera
       - group.thermostats
       - group.consumi
+      - group.snmp_monitor
       - group.weather
       - camera.italia
 
@@ -46,8 +47,9 @@
     entities:
       - script.tv_select_source
       - switch.tv_power
-      - switch.tv_enigma2
-      - switch.tv_appletv
+      - switch.tv_volume
+      - switch.input_enigma2
+      - switch.input_appletv
 
   thermostats:
     name: 'Termostato'
@@ -59,6 +61,19 @@
     - sensor.luce_potenza
     - sensor.luce_consumo_di_oggi
     - sensor.luce_consumo_di_ieri
+
+  snmp_monitor:
+    name: Bandwith Monitoring
+    entities:
+      - sensor.internet_speed_in
+      - sensor.internet_speed_out
+      - sensor.wan_traffic_in_mean
+      - sensor.wan_traffic_out_mean
+  snmp_raw_values:
+    name: SNMP Raw Values
+    entities:
+      - sensor.snmp_wan_in
+      - sensor.snmp_wan_out
 
   weather:
    name: 'Meteo'
