@@ -3,6 +3,7 @@ python:
       - "3.6"
 install:
       - pip3 install homeassistant
+      - pip3 install bs4
 script:
       - hass -c . --script check_config
 before_install:
