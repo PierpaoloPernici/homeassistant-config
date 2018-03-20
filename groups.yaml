@@ -1,0 +1,65 @@
+## GRUPPI
+
+  default_view:
+    view: yes
+    icon: mdi:home 
+    entities:
+      - sensor.meteo_symbol
+      - sensor.meteo_temperature
+      - group.switch
+      - group.thermostats
+      - group.consumi
+      - group.weather
+      - camera.italia
+
+  media:
+    name: Multimedia
+    view: yes
+    icon: mdi:play-circle-outline
+    entities:
+      - media_player.volumio
+      - media_player.sala
+      - media_player.cucina
+
+  awesome_people:
+    name: Awesome People
+    view: yes
+    icon: mdi:account-multiple
+    entities:
+      - device_tracker.pier_ipier
+      - camera.pier
+      - device_tracker.costanza_icostanza
+      - camera.costanza
+
+  misc:
+    name: Utility
+    view: yes
+    icon: mdi:settings
+    entities:
+      - group.all_automations
+      - group.information
+
+  switch:
+    name: 'Luci'
+    entities:
+      - switch.terrazzo
+
+  thermostats:
+    name: 'Termostato'
+    entities:
+      - climate.termostato
+
+  Consumi:
+    - sensor.luce_tensione
+    - sensor.luce_potenza
+    - sensor.luce_consumo_di_oggi
+    - sensor.luce_consumo_di_ieri
+
+  weather:
+    name: 'Meteo'
+    entities:
+    - weather.previsioni
+
+  Information:
+    - sensor.time__date
+    - sensor.hass_uptime

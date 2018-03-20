@@ -1,0 +1,9 @@
+sequence:
+- event: LOGBOOK_ENTRY
+  event_data:
+    name: EVENT
+    message: "Restarting Home Assistant"
+- service: notify.pcube_bot
+  data:
+    message: "Restarting Home Assistant at {{ states('sensor.time__date') }}"
+- service: homeassistant.restart

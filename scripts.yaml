@@ -1,0 +1,22 @@
+restart_ha:
+  sequence:
+  - event: LOGBOOK_ENTRY
+    event_data:
+      message: Restarting Home Assistant
+      name: EVENT
+  - data:
+      message: Restarting Home Assistant at {{ states('sensor.time__date') }}
+    service: notify.pcube_bot
+  - service: homeassistant.restart
+  alias: Restart HA
+refresh_devices:
+  sequence:
+  - data:
+      payload_template: '{"_type":"cmd","action":"reportLocation"}'
+      topic: owntracks/costanza/icostanza/cmd
+    service: mqtt.publish
+  - data:
+      payload_template: '{"_type":"cmd","action":"reportLocation"}'
+      topic: owntracks/pier/ipier/cmd
+    service: mqtt.publish
+  alias: Refresh OWNTRACKS

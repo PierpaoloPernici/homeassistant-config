@@ -1,0 +1,149 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: Europe/Rome
+
+  customize:
+    group.all_switches:
+      friendly_name: 'Luce'
+      emulated_hue: True
+    group.all_automations:
+      friendly_name: 'Automazione'
+      emulated_hue: False
+      hidden: false
+    sensor.time__date:
+      homebridge_hidden: true
+    media_player.volumio:
+      homebridge_hidden: true
+    media_player.sala:
+      homebridge_hidden: true
+    media_player.cucina:
+      homebridge_hidden: true
+
+  customize_glob:
+    "device_tracker*":
+      homebridge_hidden: true
+    "sensor.iphone_di_costanza*": 
+      hidden: false
+    "sensor.ipier*":
+      hidden: false
+    "group*":
+      homebridge_hidden: true
+
+frontend:
+
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret api_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+  server_port: 8123
+  trusted_networks:
+    - 127.0.0.1
+    - ::1
+    - 192.168.1.0/24
+    - 192.168.60.0/24
+
+updater:
+  include_used_components: true
+
+# Discover some devices automatically
+# discovery:
+
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+  exclude:
+    entities:
+      - sensor.time__date
+      - sensor.meteo_symbol
+      - weather.previsioni
+      - sensor.hass_uptime
+      - camera.pier
+      - camera.costanza
+      - camera.italia
+      - script.refresh_devices
+    domains:
+      - automation
+      - weblink
+      - updater
+      - camera
+      - group
+      - notify
+      - scene
+      - script
+      - shell_command
+      - zone
+      - zwave  
+
+recorder:
+  purge_days: 3
+  exclude:
+    entities:
+      - sensor.time__date
+      - sensor.meteo_symbol
+      - weather.previsioni
+    domains:
+      - automation
+      - weblink
+      - updater
+
+logbook:
+  exclude:
+    entities:
+      - sensor.hass_uptime
+
+logger:
+  default: error
+
+emoncms_history:
+  api_key: !secret emoncms_write_key
+  url: https://emoncms.org
+  inputnode: 10
+  whitelist:
+    - sensor.luce_potenza
+    - sensor.luce_tensione
+    - sensor.luce_consumo_di_oggi
+
+ios:
+
+sun:
+
+ifttt:
+  key: !secret ifttt_key
+
+weather:
+  - platform: yweather
+    name: Previsioni
+    woeid: !secret woeid
+
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
+
+tts:
+  - platform: voicerss
+    api_key: !secret voicerss_api_key
+    language: 'it-it'
+    codec: mp3
+    format: 8khz_8bit_mono
+
+mqtt: !include mqtt.yaml
+sensor: !include sensor.yaml    
+switch: !include switch.yaml
+camera: !include camera.yaml
+notify: !include notify.yaml
+group: !include groups.yaml
+script: !include scripts.yaml
+zone: !include zones.yaml
+automation: !include automations.yaml
+media_player: !include media_player.yaml
+device_tracker: !include device_tracker.yaml

@@ -1,0 +1,78 @@
+
+- platform: yr
+  name: Meteo
+  monitored_conditions:
+    - symbol
+    - temperature
+
+#- platform: openweathermap
+#  name: owm
+#  api_key: 5bf2dc024f73beecb7c38da5ed25740f 
+#  language: it
+#  monitored_conditions:
+#      - weather
+#      - temperature
+#      - wind_speed
+#      - wind_bearing
+#      - humidity
+#      - pressure
+#      - clouds
+
+- platform: time_date
+  display_options:
+    - 'time_date'
+
+#- platform: speedtest
+#  monitored_conditions:
+#   - ping
+#   - download
+#   - upload
+
+- platform: command_line
+  name: "HASS Uptime"
+  command: ps -o etimes= -p $(pidof /srv/homeassistant/bin/python3 /srv/homeassistant/bin/hass -c /home/homeassistant/.homeassistant)
+  scan_interval: 600
+  value_template: >-
+    {% set uptime = value | int %}
+    {% set seconds = uptime % 60 %}
+    {% set minutes = ((uptime % 3600) / 60) | int %}
+    {% set hours = ((uptime % 86400) / 3600) | int %}
+    {% set days = (uptime / 86400) | int %}
+    {%- if days > 0 -%}
+      {%- if days == 1 -%}
+        1 day
+      {%- else -%}
+        {{ days }} days
+      {%- endif -%}
+      {{ ', ' }}
+    {%- endif -%}
+    {{ '%02d' % hours }}:{{ '%02d' % minutes }}
+
+
+- platform: mqtt    
+  name: "LUCE Potenza"
+  state_topic: "tele/POW/ENERGY"
+  qos: 0
+  unit_of_measurement: "W"
+  value_template: "{{ value_json.Power }}"
+
+- platform: mqtt    
+  name: "LUCE Tensione"
+  state_topic: "tele/POW/ENERGY"
+  qos: 0
+  unit_of_measurement: "V"
+  value_template: "{{ value_json.Voltage }}"
+
+- platform: mqtt    
+  name: "LUCE Consumo di oggi"
+  state_topic: "tele/POW/ENERGY"
+  qos: 0
+  unit_of_measurement: "kWh"
+  value_template: "{{ value_json.Today }}"
+
+- platform: mqtt    
+  name: "LUCE Consumo di ieri"
+  state_topic: "tele/POW/ENERGY"
+  qos: 0
+  unit_of_measurement: "kWh"
+  value_template: "{{ value_json.Yesterday }}"

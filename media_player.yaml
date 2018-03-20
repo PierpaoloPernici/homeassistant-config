@@ -1,0 +1,4 @@
+- platform: volumio
+  host: volumio.local
+  port: 3000
+- platform: cast

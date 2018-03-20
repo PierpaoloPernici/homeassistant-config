@@ -1,0 +1,12 @@
+#- platform: wake_on_lan
+#  mac_address: !secret ds_mac
+#  name: DS
+#  host: 192.168.1.5
+- platform: mqtt
+  name: "Terrazzo"
+  state_topic: "stat/sonoff_1/POWER"
+  command_topic: "cmnd/sonoff_1/POWER"
+  qos: 1
+  payload_on: "ON"
+  payload_off: "OFF"
+  retain: true
