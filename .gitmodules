@@ -1,0 +1,3 @@
+[submodule "custom_components/media_player/homeassistant-enigma-player"]
+	path = custom_components/media_player/homeassistant-enigma-player
+	url = https://github.com/cinzas/homeassistant-enigma-player.git
