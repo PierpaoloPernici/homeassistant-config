@@ -82,3 +82,7 @@ media_player.tv_ue55mu6470:
   name:
   platform: plex
   unique_id: ve6io90tmehzolxr1pgdm5ba
+media_player.mini:
+  name:
+  platform: cast
+  unique_id: b97cb889-762f-6c42-debf-8fa557960056
