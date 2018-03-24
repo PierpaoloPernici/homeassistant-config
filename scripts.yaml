@@ -27,7 +27,7 @@ tv_select_source:
       - JgBGAJGTETcSNRQ0FBASERMREhESEBM1EzcSNxESEhESEBQPFA8TEBM1EzUQExESERIREhISETcREhMREjQUNBU0EjYTNBQADQUAAA==
     service: switch.broadlink_send_packet_192_168_1_250
   - service: media_player.turn_on
-    entity_id: media_player.zgemma
+    entity_id: media_player.gemma
   - delay: 00:00:10
   - data:
       packet:

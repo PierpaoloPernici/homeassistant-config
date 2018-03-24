@@ -10,6 +10,14 @@
   payload_on: "ON"
   payload_off: "OFF"
   retain: true
+- platform: template
+  switches:
+    google_assistant_sync:
+      value_template: "{{'off'}}"
+      turn_on:
+        service: google_assistant.request_sync
+      turn_off:
+        service: google_assistant.request_sync
 - platform: broadlink
   host: 192.168.1.250
   mac: '34:EA:34:58:96:06'

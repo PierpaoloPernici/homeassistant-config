@@ -16,7 +16,7 @@
 - platform: enigma
   host: 192.168.1.221
   port: 80
-  name: zGemma
+  name: Gemma
   icon: mdi:satellite-variant
   timeout: 20
   username: root

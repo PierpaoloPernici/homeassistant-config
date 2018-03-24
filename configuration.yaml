@@ -155,6 +155,7 @@ zone: !include zones.yaml
 automation: !include automations.yaml
 media_player: !include media_player.yaml
 device_tracker: !include device_tracker.yaml
+google_assistant: !include google_assistant.yaml
 
 input_number:
   internet_traffic_delta_in:
