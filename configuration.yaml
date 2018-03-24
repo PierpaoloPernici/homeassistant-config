@@ -160,6 +160,12 @@ input_number:
 homekit:
   pincode: !secret homekit_pincode
 
+telegram_bot:
+  - platform: broadcast
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret telegram_chat1
+
 mqtt: !include mqtt.yaml
 sensor: !include sensor.yaml    
 hue: !include hue.yaml
