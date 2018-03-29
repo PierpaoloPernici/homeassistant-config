@@ -34,3 +34,11 @@ tv_select_source:
       - JgBGAJOSEjcUMxUzFQ4UDhEREREUDxMzETcSNxMQEw4UDhEREhAUMxUOERERNxQPEzMRNxI3ExATMxUzEhEUMxIRExATDhQADQUAAA==
     service: switch.broadlink_send_packet_192_168_1_250
   alias: TV source
+tv_stop_source:
+  sequence:
+  - service: media_player.turn_off
+    entity_id: media_player.gemma
+  - data:
+      packet:
+      - 'JgBGAJaPEjcSNhE3FA8TDhASEREUDxMzETcSNxMQEw4UDhEREhAUDxMOEREROBMzFQ4QEhE3EzYTMxU2FA8TDhE2EjcUDxMADQUAAA=='
+    service: switch.broadlink_send_packet_192_168_1_250

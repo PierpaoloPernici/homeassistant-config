@@ -15,11 +15,17 @@ sensor.time__date:
 sensor.hass_uptime: {}
 device_tracker.pier_ipier: {}
 script.tv_select_source:
-  friendly_name: Topolino
-  homebridge_name: Topolino
-  icon: mdi:television-box
-  google_assistant_type: switch
+  friendly_name: Accensione Camera
   google_assistant: true
+  google_assistant_type: switch
+  homebridge_name: Accensione Camera
+  icon: mdi:television-box
+script.tv_stop_source:
+  friendly_name: Spegnimento Camera
+  google_assistant: true
+  google_assistant_type: switch
+  homebridge_name: Spegnimento Camera
+  icon: mdi:television-box
 light.tv:
   friendly_name: TV LED
 light.sala_da_pranzo:

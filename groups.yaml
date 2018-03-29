@@ -47,6 +47,7 @@
     name: 'Telecomando Camera'
     entities:
       - script.tv_select_source
+      - script.tv_stop_source
       - switch.tv_power
       - switch.tv_volume
       - switch.input_enigma2
