@@ -21,8 +21,9 @@
     view: yes
     icon: mdi:play-circle-outline
     entities:
-      - media_player.mini
-      - media_player.volumio
+      - media_player.gemma
+#      - media_player.mini
+#      - media_player.volumio
       - media_player.samsung_tv_remote
       - media_player.apple_tv
       - media_player.sala

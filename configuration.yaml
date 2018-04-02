@@ -159,6 +159,11 @@ input_number:
 
 homekit:
   pincode: !secret homekit_pincode
+  filter:
+    exclude_domains:
+      - light
+      - media_player
+      - device_tracker
 
 telegram_bot:
   - platform: broadcast
