@@ -9,17 +9,6 @@ restart_ha:
     service: notify.pcube_bot
   - service: homeassistant.restart
   alias: Restart HA
-refresh_devices:
-  sequence:
-  - data:
-      payload_template: '{"_type":"cmd","action":"reportLocation"}'
-      topic: owntracks/costanza/icostanza/cmd
-    service: mqtt.publish
-  - data:
-      payload_template: '{"_type":"cmd","action":"reportLocation"}'
-      topic: owntracks/pier/ipier/cmd
-    service: mqtt.publish
-  alias: Refresh OWNTRACKS
 tv_select_source:
   sequence:
   - data:
@@ -36,9 +25,10 @@ tv_select_source:
   alias: TV source
 tv_stop_source:
   sequence:
-  - service: media_player.turn_off
-    entity_id: media_player.gemma
   - data:
       packet:
       - 'JgBGAJaPEjcSNhE3FA8TDhASEREUDxMzETcSNxMQEw4UDhEREhAUDxMOEREROBMzFQ4QEhE3EzYTMxU2FA8TDhE2EjcUDxMADQUAAA=='
     service: switch.broadlink_send_packet_192_168_1_250
+  - service: media_player.turn_off
+    entity_id: media_player.gemma
+  alias: TV source off
