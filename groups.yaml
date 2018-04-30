@@ -49,10 +49,10 @@
     entities:
       - script.tv_select_source
       - script.tv_stop_source
-      - switch.tv_power
-      - switch.tv_volume
-      - switch.input_enigma2
-      - switch.input_appletv
+      - switch.tv_camerapower
+      - switch.tv_cameravolume
+      - switch.tv_camerahdmi1
+      - switch.tv_camerahdmi2
 
   thermostats:
     name: 'Termostato'
