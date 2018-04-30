@@ -3,6 +3,6 @@
   #username: !secret foscam_username
   #password: !secret foscam_pwd
   #name: "Camera Salone R2"
-- platform: generic
-  still_image_url: http://api.sat24.com/animated/IT/visual/1/Central%20European%20Standard%20Time/2380259'%20width=400%20height=291
-  name: Italia
+#- platform: generic
+#  still_image_url: http://api.sat24.com/animated/IT/visual/1/Central%20European%20Standard%20Time/2380259'%20width=400%20height=291
+#  name: Italia

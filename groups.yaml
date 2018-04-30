@@ -14,7 +14,7 @@
       - group.consumi
       - group.snmp_monitor
       - group.weather
-      - camera.italia
+##      - camera.italia
 
   media:
     name: Multimedia

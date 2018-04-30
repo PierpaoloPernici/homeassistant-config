@@ -40,7 +40,7 @@
 
 - platform: command_line
   name: "HASS Uptime"
-  command: ps -o etimes= -p $(pidof /usr/local/bin/python /usr/src/app/homeassistant/__main__.py)
+  command: ps -o etimes= -p $(pidof /srv/homeassistant/bin/python3 /srv/homeassistant/bin/hass -c /home/ha/.homeassistant)
   scan_interval: 600
   value_template: >-
     {% set uptime = value | int %}

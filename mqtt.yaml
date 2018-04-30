@@ -1,4 +1,4 @@
-broker: 192.168.1.5
+broker: 127.0.0.1
 port: 1883
 username: !secret mqttt_user
 password: !secret mqttt_password
