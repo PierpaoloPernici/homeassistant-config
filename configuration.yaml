@@ -106,14 +106,14 @@ logbook:
 logger:
   default: error
 
-emoncms_history:
-  api_key: !secret emoncms_write_key
-  url: https://emoncms.org
-  inputnode: 10
-  whitelist:
-    - sensor.luce_potenza
-    - sensor.luce_tensione
-    - sensor.luce_consumo_di_oggi
+#emoncms_history:
+#  api_key: !secret emoncms_write_key
+#  url: https://emoncms.org
+#  inputnode: 10
+#  whitelist:
+#    - sensor.luce_potenza
+#    - sensor.luce_tensione
+#    - sensor.luce_consumo_di_oggi
 
 ios:
 

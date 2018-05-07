@@ -61,10 +61,6 @@ automation.monitor_traffic_in:
   homebridge_hidden: true
 automation.monitor_traffic_out:
   homebridge_hidden: true
-switch.input_appletv:
-  homebridge_hidden: true
-switch.input_enigma2:
-  homebridge_hidden: true
 remote.apple_tv:
   homebridge_hidden: true
 switch.google_assistant_sync:
