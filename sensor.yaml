@@ -8,12 +8,12 @@
 - platform: snmp
   name: snmp_wan_in
   host: 192.168.1.1
-  baseoid: 1.3.6.1.2.1.2.2.1.10.6
+  baseoid: 1.3.6.1.2.1.2.2.1.10.1
 
 - platform: snmp
   name: snmp_wan_out
   host: 192.168.1.1
-  baseoid: 1.3.6.1.2.1.2.2.1.16.6
+  baseoid: 1.3.6.1.2.1.2.2.1.16.1
 
 #- platform: openweathermap
 #  name: owm
@@ -40,7 +40,7 @@
 
 - platform: command_line
   name: "HASS Uptime"
-  command: ps -o etimes= -p $(pidof /srv/homeassistant/bin/python3 /srv/homeassistant/bin/hass -c /home/ha/.homeassistant)
+  command: ps -o etimes= -p $(pidof /home/ha/homeassistant/bin/python3 /home/ha/homeassistant/bin/hass -c /home/ha/.homeassistant)
   scan_interval: 600
   value_template: >-
     {% set uptime = value | int %}

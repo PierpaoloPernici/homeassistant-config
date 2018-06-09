@@ -171,8 +171,10 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_chat1
 
-influxdb:
-  host: 192.168.1.5
+apple_tv:
+  - host: !secret apple_tv_ip
+    login_id: !secret apple_tv_login
+    credentials: !secret apple_tv_credentials
 
 mqtt: !include mqtt.yaml
 sensor: !include sensor.yaml    

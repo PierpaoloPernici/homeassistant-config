@@ -16,11 +16,17 @@ tv_select_source:
       - JgBGAJGTETcSNRQ0FBASERMREhESEBM1EzcSNxESEhESEBQPFA8TEBM1EzUQExESERIREhISETcREhMREjQUNBU0EjYTNBQADQUAAA==
     service: switch.broadlink_send_packet_192_168_1_250
   - service: media_player.turn_on
-    entity_id: media_player.gemma
+    entity_id: media_player.apple_tv
+  - service: remote.send_command
+    data:
+      entity_id: remote.apple_tv
+      command:
+        - menu
+        - menu
   - delay: 00:00:10
   - data:
       packet:
-      - JgBGAJOSEjcUMxUzFQ4UDhEREREUDxMzETcSNxMQEw4UDhEREhAUMxUOERERNxQPEzMRNxI3ExATMxUzEhEUMxIRExATDhQADQUAAA==
+      - JgBGAJOUETkRORA6ERQQFRAVERQRFBA6ETkROhAVDxYQFQ8WEBUQFQ87EDoRORA6DzsQFRA6DzsPFhAVDxYQFRAVEDoQFRAADQUAAA==
     service: switch.broadlink_send_packet_192_168_1_250
   alias: TV source
 tv_stop_source:
@@ -30,5 +36,5 @@ tv_stop_source:
       - 'JgBGAJaPEjcSNhE3FA8TDhASEREUDxMzETcSNxMQEw4UDhEREhAUDxMOEREROBMzFQ4QEhE3EzYTMxU2FA8TDhE2EjcUDxMADQUAAA=='
     service: switch.broadlink_send_packet_192_168_1_250
   - service: media_player.turn_off
-    entity_id: media_player.gemma
+    entity_id: media_player.apple_tv
   alias: TV source off
